@@ -32,7 +32,8 @@ loss_net <- function(theta, y, X) {
 #' xb <- 3.5*gender + 0.2*age - 9 # w1*x1 + w2*xw + b
 #' p <- 1/(1 + exp(-xb))
 #' y <- rbinom(n = 100, size = 1, prob = p) # output
-#' regr <- cbind(gender, age) # create matrix of inputs weights <- neural_net(y = y, X = regr)
+#' regr <- cbind(gender, age) # create matrix of inputs
+#' weights <- neural_net(y = y, X = regr)
 neural_net <- function(y, X, init.val = rep(0, dim(X)[2] + 1)) {
 
   fit <- optim(par = init.val, fn = loss_net, y = y, X = X)

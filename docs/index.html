@@ -73,6 +73,11 @@
 <span class="va">p</span> <span class="op">&lt;-</span> <span class="fl">1</span><span class="op">/</span><span class="op">(</span><span class="fl">1</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">exp</a></span><span class="op">(</span><span class="op">-</span><span class="va">xb</span><span class="op">)</span><span class="op">)</span>
 <span class="va">y</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">100</span>, size <span class="op">=</span> <span class="fl">1</span>, prob <span class="op">=</span> <span class="va">p</span><span class="op">)</span> <span class="co"># output</span>
 <span class="va">regr</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">gender</span>, <span class="va">age</span><span class="op">)</span> <span class="co"># create matrix</span></pre></div>
+<p>To find the weights, just use the following function:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit">
+<span class="va">weights</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/neural_net.html">neural_net</a></span><span class="op">(</span>y <span class="op">=</span> <span class="va">y</span>, X <span class="op">=</span> <span class="va">regr</span><span class="op">)</span>
+<span class="va">weights</span></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co">## [1]   881.77986    42.63734 -1883.78980</span></span></code></pre></div>
 </div>
   </div>
 
